@@ -27,7 +27,7 @@
 					var days = Math.floor(distance / _day);
 					var hours = Math.floor((distance % _day) / _hour);
 					var minutes = Math.floor((distance % _hour) / _minute);
-					var seconds = Math.floor((distance % _minutes) / _second);
+					var seconds = Math.floor((distance % _minute) / _second);
 
 					document.getElementById(id).innerHTML = days + ' days, ';
 					document.getElementById(id).innerHTML += hours + ' hrs, ';
