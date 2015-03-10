@@ -2,8 +2,46 @@
 <html>
 	<head>
 		<title>Last Day of School Countdown</title>
+		<script>
+			countDownTimer('05/29/2015 2:00 PM', 'seniors');
+			countDownTimer('06/05/2015 2:00 PM', 'others');
+
+			function countDownTimer(dt, id) {
+				var end = new Date(dt);
+
+				var _second = 1000;
+				var _minute = _second * 60;
+				var _hour = _minute * 60;
+				var _day = _hour * 24;
+				var timer;
+
+				function showRemaining() {
+					var now = new Date();
+					var distance = end - now;
+					if(distance < 0) {
+						clearInterval(timer);
+						document.getElementById(id).innerHTML = 'FINISHED!!!';
+						return;
+					}
+
+					var days = Math.floor(distance / _day);
+					var hours = Math.floor((distance % _day) / _hour);
+					var minutes = Math.floor((distance % _hour) / _minute);
+					var seconds = Math.floor((distance % _minutes) / _second);
+
+					document.getElementById(id).innerHTML = days + ' days, ';
+					document.getElementById(id).innerHTML += hours + ' hrs, ';
+					document.getElementById(id).innerHTML += minutes + ' min, ';
+					document.getElementById(id).innerHTML += seconds + ' sec';
+				};
+
+				timer = setInterval(showRemaining, 1000);
+			};
+		</script>
 	</head>
 	<body>
 		<p>Here you may find the days left until the last day of school.</p>
+		<div id="seniors" ></div>
+		<div id="others" ></div>
 	</body>
 </html>
