@@ -22,7 +22,7 @@ function countDownTimer(dt, id) {
 		// Get the difference
 		var distance = end - now;
 		// If the date has passed
-		if(distance < 0) {
+		if(distance <= 0) {
 			// Clear the timer 
 			clearInterval(timer);
 			// Print some text
@@ -41,11 +41,15 @@ function countDownTimer(dt, id) {
 		var minutes = Math.floor((distance % _hour) / _minute);
 		var seconds = Math.floor((distance % _minute) / _second);
 
+		var timer = "";
+
 		// Print the information on the page
-		document.getElementById(id).innerHTML = days + ' days, ';
-		document.getElementById(id).innerHTML += hours + ' hrs, ';
-		document.getElementById(id).innerHTML += minutes + ' min, ';
-		document.getElementById(id).innerHTML += seconds + ' sec';
+		if(days != 0) timer += days + ' days, ';
+		if(days != 0 || hours != 0) timer += hours + ' hrs, ';
+		if(days != 0 || hours != 0 || minutes != 0) timer += minutes + ' min, ';
+		if(days != 0 || hours != 0 || minutes != 0 || seconds != 0) timer += seconds + ' sec';
+
+		document.getElementById(id).innerHTML = timer;
 	};
 	// Refresh every second
 	timer = setInterval(showRemaining, 1000);
