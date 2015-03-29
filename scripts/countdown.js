@@ -12,6 +12,7 @@ function countDownTimer(dt, id) {
 	var _minute = _second * 60;
 	var _hour = _minute * 60;
 	var _day = _hour * 24;
+	var _week = _day * 7
 	// Interval variable
 	var timer;
 
@@ -36,7 +37,8 @@ function countDownTimer(dt, id) {
 		}
 
 		// Obtain the number for each of the following
-		var days = Math.floor(distance / _day);
+		var weeks = Math.floor(distance / _week);
+		var days = Math.floor((distance % _week) / _day);
 		var hours = Math.floor((distance % _day) / _hour);
 		var minutes = Math.floor((distance % _hour) / _minute);
 		var seconds = Math.floor((distance % _minute) / _second);
@@ -44,10 +46,11 @@ function countDownTimer(dt, id) {
 		var timer = "";
 
 		// Print the information on the page
-		if(days != 0) timer += days + ' days, ';
-		if(days != 0 || hours != 0) timer += hours + ' hrs, ';
-		if(days != 0 || hours != 0 || minutes != 0) timer += minutes + ' min, ';
-		if(days != 0 || hours != 0 || minutes != 0 || seconds != 0) timer += seconds + ' sec';
+		if(weeks != 0) timer += weeks + ' weeks, ';
+		if(weeks != 0 || days != 0) timer += days + ' days, ';
+		if(weeks != 0 || days != 0 || hours != 0) timer += hours + ' hrs, ';
+		if(weeks != 0 || days != 0 || hours != 0 || minutes != 0) timer += minutes + ' min, ';
+		if(weeks != 0 || days != 0 || hours != 0 || minutes != 0 || seconds != 0) timer += seconds + ' sec';
 
 		document.getElementById(id).innerHTML = timer;
 	};
