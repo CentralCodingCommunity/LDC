@@ -46,7 +46,7 @@ function countDownTimer(dt, id) {
 		var timer = "";
 
 		// Print the information on the page
-		if(weeks != 0) timer += weeks + 'weeks, ';
+		if(weeks != 0) timer += weeks + ' weeks, ';
 		if(weeks != 0 || days != 0) timer += days + ' days, ';
 		if(weeks != 0 || days != 0 || hours != 0) timer += hours + ' hrs, ';
 		if(weeks != 0 || days != 0 || hours != 0 || minutes != 0) timer += minutes + ' min, ';
