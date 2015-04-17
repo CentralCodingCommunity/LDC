@@ -1,6 +1,6 @@
 // Call the functions
 countDownTimer('05/29/2015 2:00 PM', 'seniors');
-countDownTimer('06/05/2015 2:00 PM', 'others');
+countDownTimer('06/09/2015 2:00 PM', 'others');
 
 // Define the countdown function
 function countDownTimer(dt, id) {
