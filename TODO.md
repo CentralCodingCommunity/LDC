@@ -1,3 +1,3 @@
 To Do
 =====
- - Enhance page for mobiles
+ - Allow users to switch between days and weeks as the largest unit.
